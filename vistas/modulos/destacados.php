@@ -10,7 +10,7 @@ BANNER
 		
 		<h1 style="color:#fff">OFERTAS ESPECIALES</h1>
 
-		<h2 style="color:#fff"><strong>50% off</strong></h1>
+		<h2 style="color:#fff"><strong>90% off</strong></h1>
 
 		<h3 style="color:#fff">Termina el 31 de Enero</h3>
 
@@ -36,7 +36,7 @@ BARRA DE PRODUCTOS
 						
 						<i class="fa fa-th" aria-hidden="true"></i>
 
-						<span class="col-xs-0 pull-right"> GRID</span>
+						<span class="col-xs-0 pull-right">GRID</span>
 
 					</button>
 
@@ -44,7 +44,7 @@ BARRA DE PRODUCTOS
 						
 						<i class="fa fa-list" aria-hidden="true"></i>
 
-						<span class="col-xs-0 pull-right"> LIST</span>
+						<span class="col-xs-0 pull-right">LIST</span>
 
 					</button>
 					
