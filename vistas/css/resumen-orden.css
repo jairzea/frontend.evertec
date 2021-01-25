@@ -1,0 +1,14 @@
+/*=========================
+RESUMEN DE ORDEN
+=========================*/
+.cabeceraOrden{
+	height: 40px;
+}
+
+.cabeceraOrden h3{
+	margin-top: -5px;
+}
+
+.cabeceraCheckout{
+	height: 66px;
+}

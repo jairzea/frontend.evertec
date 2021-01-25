@@ -38,6 +38,8 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
 
+	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/sweetalert.css">
+
 	<!--===================================
 	HOJAS DE ESTILO PERSONALIZADAS
 	====================================-->
@@ -48,6 +50,8 @@
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/productos.css">
 
+	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/resumen-orden.css">
+
 	<!--===================================
 	PLUGINS DE JAVASCRIPT
 	====================================-->
@@ -55,6 +59,8 @@
 	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.min.js"></script>
 
 	<script src="<?php echo $url; ?>vistas/js/plugins/bootstrap.min.js"></script>
+
+	<script src="<?php echo $url; ?>vistas/js/plugins/sweetalert.min.js"></script>
 
 </head>
 
@@ -69,15 +75,24 @@ CABEZOTE
 include "modulos/cabezote.php";
 
 /*=============================================
-CONTENIDO
+CONTENIDO DINAMICO
 =============================================*/
 
-include "modulos/destacados.php";
+if (isset($_GET["ruta"])) {
+	
+	include "modulos/".$_GET["ruta"].".php";
 
-include "modulos/productos.php";
+}else{
+
+	include "modulos/destacados.php";
+
+	include "modulos/productos.php";
+
+}
 
 ?>
 
+<input type="hidden" value="<?php echo $url; ?>" id="rutaOculta">
 <!--===================================
 JAVASCRITP PERSONALIZADO
 ====================================-->

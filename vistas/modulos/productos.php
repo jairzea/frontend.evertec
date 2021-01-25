@@ -74,7 +74,7 @@
 						
 						<a href="">
 							
-							collar de diamantes<br>
+							Collar de diamantes<br>
 
 							<span class="label label-warning fontSize">Nuevo</span>
 
@@ -116,7 +116,7 @@
 							
 						</button>
 
-						<button type="button" class="btn btn-default btn-xs btnLlenarOrden" idProducto="470" imagen="vistas/img/productos/accesorios/accesorio04.jpg" titulo="collar de diamantes" precio="100" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
+						<button type="button" class="btn btn-default btn-xs btnLlenarOrden" idProducto="10" imagen="vistas/img/productos/accesorios/accesorio04.jpg" titulo="collar de diamantes" precio="100" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
 
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 							
@@ -467,7 +467,7 @@
 							
 						</button>
 
-						<button type="button" class="btn btn-default btn-xs btnLlenarOrden" idProducto="470" imagen="vistas/img/productos/accesorios/accesorio04.jpg" titulo="collar de diamantes" precio="100" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
+						<button type="button" class="btn btn-default btn-xs btnLlenarOrden" idProducto="10" imagen="vistas/img/productos/accesorios/accesorio04.jpg" titulo="collar de diamantes" precio="100" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
 
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 							
@@ -816,21 +816,21 @@ MODAL PARA LLENAR ORDEN DE PRODUCTO
 
 	  		<div class="col-xs-6">
 	  			
-	  			<h2>
+	  			<h3>
 
 	  				<small class="text-uppercase">Nombre del Producto</small>
 	  			
-	  			</h2>
+	  			</h3>
 
 	  		</div>
 
 	  		<div class="col-xs-6 nombreProducto">
 	  			
-	  			<h2>
+	  			<h3>
 
 	  				<small class="text-uppercase"></small>
 	  			
-	  			</h2>
+	  			</h3>
 
 	  		</div>
 	  		
@@ -840,21 +840,21 @@ MODAL PARA LLENAR ORDEN DE PRODUCTO
 
 	  		<div class="col-xs-6">
 	  			
-	  			<h2>
+	  			<h3>
 
 	  				<small class="text-uppercase">Precio del Producto</small>
 	  			
-	  			</h2>
+	  			</h3>
 
 	  		</div>
 
 	  		<div class="col-xs-6 precioProducto">
 	  			
-	  			<h2>
+	  			<h3>
 
 	  				<small class="text-uppercase"></small>
 	  			
-	  			</h2>
+	  			</h3>
 
 	  		</div>
 	  		
@@ -883,6 +883,7 @@ MODAL PARA LLENAR ORDEN DE PRODUCTO
 	  			</span>
 
 	  			<input type="email" class="form-control" name="regEmail" id="regEmail" placeholder="Correo electronico" required>
+	  			<input type="hidden" class="form-control" name="id_producto" id="id_producto" required>
 
 	  		</div>
 
@@ -924,7 +925,7 @@ MODAL PARA LLENAR ORDEN DE PRODUCTO
 	  		
 	  	</div>
 
-	  	<input type="button" class="btn btn-default backColor btn-block text-uppercase" value="Registrar y ver resumen de la orden">
+	  	<input type="button" class="btn btn-default backColor btn-block text-uppercase btnRegistrarOrden" value="Registrar y ver resumen de la orden">
 
 	  </form>
 	  
