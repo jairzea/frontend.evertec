@@ -32,7 +32,7 @@ BARRA DE PRODUCTOS
 
 				<div class="btn-group pull-right">
 
-					<button type="button" class="btn btn-default btnGrid" id="btnGrid0">
+					<button type="button" class="btn btn-default btnGrid backColor" id="btnGrid">
 						
 						<i class="fa fa-th" aria-hidden="true"></i>
 

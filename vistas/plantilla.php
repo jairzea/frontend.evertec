@@ -84,6 +84,7 @@ JAVASCRITP PERSONALIZADO
 
 <script src="<?php echo $url; ?>vistas/js/cabezote.js"></script>
 <script src="<?php echo $url; ?>vistas/js/plantilla.js"></script>
+<script src="<?php echo $url; ?>vistas/js/ordenes.js"></script>
 
 </body>
 </html>

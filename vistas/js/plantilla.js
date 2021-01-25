@@ -2,6 +2,9 @@
 PLANTILLA
 =============================================*/
 
+// Aplicando tooltip
+$('[data-toggle="tooltip"]').tooltip();
+
 $.ajax({
 
 	url:"ajax/plantilla.ajax.php",
@@ -21,4 +24,41 @@ $.ajax({
 	}
 
 
+})
+
+/*==============================
+CUADRICULA O LISTA
+==============================*/
+$("#btnGrid").click(function(){
+
+	$("#list").hide();
+	$("#grid").show();
+
+	$("#btnList").removeClass('backColor');
+	$("#btnGrid").addClass('backColor');
+
+})
+
+$("#btnList").click(function(){
+
+	$("#list").show();
+	$("#grid").hide();
+
+	$("#btnList").addClass('backColor');
+	$("#btnGrid").removeClass('backColor');
+
+})
+
+$('.btnLlenarOrden').click(function(){
+
+	$('.nombreProducto small').empty();
+	$('.precioProducto small').empty();
+
+	let titulo = $(this).attr('titulo');
+	let precio = $(this).attr('precio');
+
+	$('.nombreProducto small').append(titulo);
+	$('.precioProducto small').append('$ '+precio);
+
+	$('#modalOrden').modal("show");
 })
