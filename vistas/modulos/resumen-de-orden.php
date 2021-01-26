@@ -110,9 +110,8 @@ TABLA RESUMEN DE ORDEN
 
 					<div class="col-sm-1 col-xs-12">
 
-						<figure>
+						<figure class="imgResumenOrden">
 							
-							<img src="vistas/img/productos/accesorios/accesorio04.jpg" alt="accesorio_04" class="img-thumbnail">
 
 						</figure>
 

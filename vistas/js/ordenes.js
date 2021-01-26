@@ -112,16 +112,14 @@ $('.btnRegistrarOrden').on('click', function(){
         	if (respuesta.status == 200) {
 
         		swal({
-					  title: "",
-					  text: respuesta.detalle,
-					  type: "success",
-					  showCancelButton: false,
-					  confirmButtonColor: "#318f8d",
-					  confirmButtonText: "¡Ir al resumen de orden!",
-					  closeOnConfirm: false
-					},
-					function(isConfirm){
-						if (isConfirm) {
+			        title:'Exito',
+			        text: respuesta.detalle,
+			        type: 'success',
+			        showCancelButton: false,
+			        confirmButtonColor: '#3085d6',
+			        confirmButtonText: "¡Ir al resumen de orden!"
+			       }).then(function(result){
+						if (result.value) {
 
 							let headers = new Headers();
 
@@ -145,6 +143,7 @@ $('.btnRegistrarOrden').on('click', function(){
 										         'descripcion_producto': datos[0]['descripcion_producto'],
 										         'id_orden': datos[0]['id_orden'],
 										         'telefono': datos[0]['telefono'],
+										         'imagen': datos[0]['imagen_producto'],
 										         'precio_producto': datos[0]['precio_producto']})
 
 					        	localStorage.setItem("listaProducto", JSON.stringify(listaOrden))

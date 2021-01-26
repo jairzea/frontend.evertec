@@ -64,9 +64,9 @@ TOP
 				
 				<ul>
 					
-					<li><a href="<?php echo $url;?>usuario" data-toggle="modal">Usuario</a></li>
+					<li><a href="#modalIngreso" data-toggle="modal">Usuario</a></li>
 					<li>|</li>
-					<li><a href="<?php echo $url;?>administrador" data-toggle="modal">Administrador</a></li>
+					<li><a href="<?php echo $url;?>administrador">Administrador</a></li>
 
 				</ul>
 

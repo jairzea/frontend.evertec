@@ -16,23 +16,28 @@
 
               <div class="card-header">
 
-                <button class="btn btn-primary btn-sm btnAbrirCrear" data-toggle="modal" data-target="#modalProducto">Crear nuevo producto</button>
+                <h3>Ordenes</h3>
 
               </div>
 
               <div class="page-header">
 
-                <table class="tablas table table-bordered table-striped tablaPdoductos" width="100%">
+                <table class="tablas table table-bordered table-striped tablaOrdenesUsuarios" width="100%">
                   
                   <thead>
 
                       <tr>
                         <th style="width: 10px">#</th>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Referencia</th>
+                        <th>Fecha creación</th>
+                        <th>Url de pago</th>
                         <th>Producto</th>
-                        <th>Descripcion</th>
                         <th>Precio</th>
+                        <th>Edtado</th>
                         <th>Imagen</th>
-                        <th style="width: 100px">Acciones</th>
                       </tr>
 
                   </thead>
@@ -136,13 +141,13 @@ MODAL AGREGAR EMPRESA
               
                 <span class="input-group-addon"><i class="fa fa-usd"></i></span> 
 
-                <input type="number" class="form-control input" name="precioProducto" id="precioProducto" placeholder="Precio Producto" max="500000" required>
+                <input type="number" class="form-control input" name="precioProducto" id="precioProducto" placeholder="Precio Producto" required>
 
               </div>
 
             </div>
 
-            <!-- ENTRADA PARA EL LINK DE LA IMAGEN -->
+            <!-- ENTRADA PARA EL REPRESENTANTE -->
 
             <div class="form-group row">
 
@@ -156,7 +161,6 @@ MODAL AGREGAR EMPRESA
                     <input type="hidden" name="idProducto" id="idProducto" required>
 
                 </div>
-                <p class="help-block">Formato: jpg o png | Dimesiones 250 x 250.</p>
 
               </div>
 

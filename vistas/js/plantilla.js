@@ -72,19 +72,3 @@ $("#btnList").click(function(){
 
 })
 
-$('.btnLlenarOrden').click(function(){
-
-	$('.nombreProducto small').empty();
-	$('.precioProducto small').empty();
-
-	let titulo = $(this).attr('titulo');
-	let precio = $(this).attr('precio');
-	let id_producto = $(this).attr('idProducto');
-
-	$('#id_producto').val(id_producto);
-
-	$('.nombreProducto small').append(titulo);
-	$('.precioProducto small').append('$ '+precio);
-
-	$('#modalOrden').modal("show");
-})

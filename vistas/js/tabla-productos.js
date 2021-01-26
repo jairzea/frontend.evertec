@@ -71,6 +71,27 @@ $(document).ready(function(){
 
 })
 
+/*=============================================
+VALIDAR MONTO
+=============================================*/
+
+$('#regEmail').change(function(){
+
+  $('.alertMail').empty();
+
+  let email = $(this).val();
+
+  var expresion = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+  if (!expresion.test(email)) {
+
+    $('#regEmail').parent().before('<div class="alertMail"><div class="alert alert-danger"><strong>ERROR:</strong> Escriba correctamente el correo electronico</div></div>');
+
+    return false;
+  }
+
+})
+
 /*========================================
 =            Agregar Producto            =
 ========================================*/
@@ -99,6 +120,10 @@ $('.btnGuardarProducto').on('click', function(){
         confirmButtonText: 'Ok!'
        }).then(function(result){
 
+          $('#nombreProducto').val('');
+          $('#descripcionProducto').summernote('code','');
+          $('#precioProducto').val('');
+          $('#imagenProducto').val('');
           tablaProductos.ajax.reload();
           $('#modalProducto').modal('hide');
 

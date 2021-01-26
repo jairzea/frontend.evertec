@@ -80,7 +80,7 @@ $.ajax({
 								
 							</button>
 
-							<button type="button" class="btn btn-default btn-xs btnLlenarOrden" idProducto="${respuesta[i]['id']}" imagen="${respuesta[i]['img']}" titulo="${respuesta[i]['name']}" precio="${precio}" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
+							<button type="button" class="btn btn-default btn-xs" onclick="llenarOrden(this)"  idProducto="${respuesta[i]['id']}" imagen="${respuesta[i]['img']}" titulo="${respuesta[i]['name']}" precio="${precio}" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
 
 								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								
@@ -163,7 +163,7 @@ $.ajax({
 							
 						</button>
 
-						<button type="button" class="btn btn-default btn-xs btnLlenarOrden" idProducto="${respuesta[i]['id']}" imagen="${respuesta[i]['img']}" titulo="${respuesta[i]['name']}" precio="${precio}" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
+						<button type="button" class="btn btn-default btn-xs" onclick="llenarOrden(this)" idProducto="${respuesta[i]['id']}" imagen="${respuesta[i]['img']}" titulo="${respuesta[i]['name']}" precio="${precio}" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
 
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 							
@@ -200,6 +200,38 @@ $.ajax({
 
 })
 
-
-
 /*=====  End of VITRINA DE PRODUCTOS  ======*/
+
+function llenarOrden(elm){
+
+	$('.nombreProducto small').empty();
+	$('.precioProducto small').empty();
+
+	let titulo = elm.getAttribute('titulo');
+	let precio = elm.getAttribute('precio');
+	let id_producto = elm.getAttribute('idProducto');
+
+	$('#id_producto').val(id_producto);
+
+	$('.nombreProducto small').append(titulo);
+	$('.precioProducto small').append('$ '+precio);
+
+	$('#modalOrden').modal("show");
+}
+
+/*=========================================
+=            CONSULTAR ORDENES            =
+=========================================*/
+$('.btnConsultarOrden').on('click', function(){
+
+	// fetch('http://apirest-tienda.evertec/registro_productos', {
+ //   	method: 'POST',
+ //   	body: data
+ //  	}).then((response) => response.json())
+ //  	.then((responseJson) => {
+
+ //  	}
+})
+
+
+

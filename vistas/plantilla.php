@@ -138,6 +138,7 @@ JAVASCRITP PERSONALIZADO
 <script src="<?php echo $url; ?>vistas/js/tabla-productos.js"></script>
 <script src="<?php echo $url; ?>vistas/js/tabla-ordenes.js"></script>
 <script src="<?php echo $url; ?>vistas/js/productos.js"></script>
+<script src="<?php echo $url; ?>vistas/js/tabla-ordenes-usuarios.js"></script>
 
 </body>
 </html>
