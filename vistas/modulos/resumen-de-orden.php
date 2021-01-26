@@ -1,8 +1,3 @@
-<?php  
-
-print_r($_GET);
-
-?>
 
 <!--=========================
 INFORMACION DEL CLIENTE
@@ -16,9 +11,9 @@ INFORMACION DEL CLIENTE
 
 			<ul class="breadcrumb text-uppercase">
 
-				<p>Hola <strong>Jair Zea</strong>, gracias por confiar en nostros, acontinuación te presentamos un resumen de tu orden:.</p>
-				<p>Correo electronico: <strong>jairzeapaez@gmail.com</strong></p>
-				<p>Telefono: <strong>3217098185</strong></p>
+				<p>Hola <strong id="nombreResumen"></strong>, gracias por confiar en nostros, acontinuación te presentamos un resumen de tu orden:.</p>
+				<p>Correo electronico: <strong id="correoResumen"></strong></p>
+				<p>Telefono: <strong id="telefonoResumen"></strong></p>
 				
 			</ul>
 			
@@ -129,8 +124,8 @@ TABLA RESUMEN DE ORDEN
 
 						<br>
 							
-						<p class="tituloResumenOrden text-left">Collar de diamantes</p>
-						<p class="descripcionResumenOrden text-left">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Nemo delectus nihil quaerat cupiditate. Impedit minima exercitationem laudantium quos rerum, quod quas aliquid blanditiis omnis modi, molestias consequuntur placeat dicta, aspernatur.</p>
+						<p class="tituloResumenOrden text-left"></p>
+						<p class="descripcionResumenOrden text-left"></p>
 
 					</div>
 
@@ -140,7 +135,7 @@ TABLA RESUMEN DE ORDEN
 
 						<br>
 							
-						<p class="precioResumen text-center">COP $<span>100</span></p>
+						<p class="precioResumen text-center">COP $<span></span></p>
 
 					</div>
 
@@ -170,7 +165,7 @@ TABLA RESUMEN DE ORDEN
 
 						<p>
 							
-							<strong>COP $<span>100</span></strong>
+							<strong>COP $<span class="precioResumen"></span></strong>
 						</p>
 						
 					</div>
@@ -199,7 +194,7 @@ TABLA RESUMEN DE ORDEN
 
 							<h4 class="sumaSubTotal text-right">
 								
-								<strong>COP $<span>100</span></strong>
+								<strong>COP $<span class="precioResumen"></span></strong>
 
 							</h4>
 							
@@ -217,7 +212,7 @@ TABLA RESUMEN DE ORDEN
 
 				<div class="panel-heading cabeceraCheckout">
 
-					<button class="btn btn-default backColor btn-lg pull-right">REALIZAR PAGO</button>
+					<button class="btn btn-default backColor btn-lg pull-right btnRealizarPago">REALIZAR PAGO</button>
 					
 				</div>
 
@@ -226,4 +221,25 @@ TABLA RESUMEN DE ORDEN
 	</div>
 
 </div>
+
+<script type="text/javascript">
+	
+$(document).ready(function(){
+
+	localStorage.getItem("listaProducto")
+
+	let datos = JSON.parse(localStorage.getItem("listaProducto"));
+
+	$('#nombreResumen').append(datos[0]['nombre']);
+
+	$('#correoResumen').append(datos[0]['email'])
+	$('#telefonoResumen').append(datos[0]['telefono'])
+
+	$('.tituloResumenOrden').append(datos[0]['nombre_producto'])
+	$('.descripcionResumenOrden').append(datos[0]['descripcion_producto'])
+	$('.precioResumen').append(datos[0]['precio_producto'])
+
+})
+
+</script>
 

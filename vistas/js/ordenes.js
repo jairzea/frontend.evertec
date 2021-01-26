@@ -134,37 +134,23 @@ $('.btnRegistrarOrden').on('click', function(){
 
 								let datos = responseJson.orden;
 
-								window.location = `${rutaOculta}resumen-de-orden?nombre=${datos[0]['nombre']}&email=${datos[0]['email']}&nombre_producto=${datos[0]['nombre_producto']}&descripcion_producto=${datos[0]['descripcion_producto']}&precio_producto=${datos[0]['precio_producto']}`;
+								var listaOrden = [];
 
-								// var data = {
-								//     "nombre" : datos[0]['nombre'], 
-								//     "email" : datos[0]['email'],
-								//     "nombre_producto" : datos[0]['nombre_producto'],
-								//     "descripcion_producto" : datos[0]['descripcion_producto'],
-								//     "precio_producto" : datos[0]['precio_producto'],
-								// };
+								/*===========================================================
+					        	=            Agregar informacion al localstorage            =
+					        	===========================================================*/
+					        	listaOrden.push({'nombre' : datos[0]['nombre'],
+										         'email' : datos[0]['email'],
+										         'nombre_producto' : datos[0]['nombre_producto'],
+										         'descripcion_producto': datos[0]['descripcion_producto'],
+										         'id_orden': datos[0]['id_orden'],
+										         'telefono': datos[0]['telefono'],
+										         'precio_producto': datos[0]['precio_producto']})
 
-								// var url = `${rutaOculta}resumen-de-orden`;
+					        	localStorage.setItem("listaProducto", JSON.stringify(listaOrden))
 
-								// $.post(url, function(data){
-								// 	window.location = `${rutaOculta}resumen-de-orden`
-								// })
+					        	window.location = rutaOculta+"resumen-de-orden";
 
-								// enviarDatos(data, url); // Ejecutar cuando se quiera enviar los datos
-
-								// function enviarDatos(data, url){
-								//     $.ajax({
-								//             data: data,
-								//             url: url,
-								//             type: 'post',
-								//             success:  function (response) {
-								//                 window.location = `${rutaOculta}resumen-de-orden`
-								//             },
-								//             error: function (error) {
-								//                 console.log(error); // Imprimir respuesta de error
-								//             }
-								//     });
-								// }
 
 							}).catch((error) => {
 
@@ -172,7 +158,6 @@ $('.btnRegistrarOrden').on('click', function(){
 								
 							});
 
-							// window.location = rutaOculta+"resumen-de-orden";
 						} 
 				});
 
@@ -193,3 +178,25 @@ $('.btnRegistrarOrden').on('click', function(){
     })
 
 })
+
+/*=====================================
+=            PROCESAR PAGO            =
+=====================================*/
+$('.btnRealizarPago').on('click', function(){
+
+	fetch('ajax/ordenes.ajax.php', {
+	 method: 'POST',
+	}).then((response) => response.json())
+	.then((responseJson) => {
+
+		console.log("responseJson", responseJson);
+
+	}).catch((error) => {
+
+		console.error(error);
+		
+	});
+
+})
+
+/*=====  End of PROCESAR PAGO  ======*/
