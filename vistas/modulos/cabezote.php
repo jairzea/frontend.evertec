@@ -64,9 +64,9 @@ TOP
 				
 				<ul>
 					
-					<li><a href="#modalIngreso" data-toggle="modal">Ingresar</a></li>
+					<li><a href="<?php echo $url;?>usuario" data-toggle="modal">Usuario</a></li>
 					<li>|</li>
-					<li><a href="#modalRegistro" data-toggle="modal">Crear una cuenta</a></li>
+					<li><a href="<?php echo $url;?>administrador" data-toggle="modal">Administrador</a></li>
 
 				</ul>
 
@@ -94,7 +94,7 @@ HEADER
 			
 			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="logotipo">
 				
-				<a href="#">
+				<a href="<?php echo $url ?>">
 						
 					<img src="vistas/img/plantilla/evertec-logo.png" class="img-responsive">
 

@@ -40,6 +40,13 @@
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/sweetalert.css">
 
+	<!-- summernote -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+	<!-- DataTables -->
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/responsive.bootstrap4.min.css">
+
 	<!--===================================
 	HOJAS DE ESTILO PERSONALIZADAS
 	====================================-->
@@ -62,6 +69,15 @@
 
 	<script src="<?php echo $url; ?>vistas/js/plugins/sweetalert.min.js"></script>
 
+	<!-- Summernote -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+	<!-- DataTables -->
+    <script src="<?php echo $url; ?>vistas/js/plugins/jquery.dataTables.min.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/dataTables.bootstrap4.min.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/dataTables.responsive.min.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/responsive.bootstrap4.min.js"></script>
+
 </head>
 
 <body>
@@ -79,8 +95,26 @@ CONTENIDO DINAMICO
 =============================================*/
 
 if (isset($_GET["ruta"])) {
-	
-	include "modulos/".$_GET["ruta"].".php";
+
+	$rutaActual = "modulos/".$_GET["ruta"].".php";
+
+	if ($rutaActual == "modulos/administrador.php" || $rutaActual == "modulos/tabla-productos.php") {
+
+		include "modulos/administrador.php";
+		
+		include "modulos/tabla-productos.php";
+
+	}elseif ($rutaActual == "modulos/administrador.php" || $rutaActual == "modulos/tabla-ordenes.php"){
+
+		include "modulos/administrador.php";
+		
+		include "modulos/tabla-ordenes.php";
+
+	}else{
+
+		include $rutaActual;
+
+	}
 
 }else{
 
@@ -100,6 +134,9 @@ JAVASCRITP PERSONALIZADO
 <script src="<?php echo $url; ?>vistas/js/cabezote.js"></script>
 <script src="<?php echo $url; ?>vistas/js/plantilla.js"></script>
 <script src="<?php echo $url; ?>vistas/js/ordenes.js"></script>
+<script src="<?php echo $url; ?>vistas/js/resumen-de-orden.js"></script>
+<script src="<?php echo $url; ?>vistas/js/tabla-productos.js"></script>
+<script src="<?php echo $url; ?>vistas/js/tabla-ordenes.js"></script>
 
 </body>
 </html>

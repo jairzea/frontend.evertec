@@ -222,24 +222,3 @@ TABLA RESUMEN DE ORDEN
 
 </div>
 
-<script type="text/javascript">
-	
-$(document).ready(function(){
-
-	localStorage.getItem("listaProducto")
-
-	let datos = JSON.parse(localStorage.getItem("listaProducto"));
-
-	$('#nombreResumen').append(datos[0]['nombre']);
-
-	$('#correoResumen').append(datos[0]['email'])
-	$('#telefonoResumen').append(datos[0]['telefono'])
-
-	$('.tituloResumenOrden').append(datos[0]['nombre_producto'])
-	$('.descripcionResumenOrden').append(datos[0]['descripcion_producto'])
-	$('.precioResumen').append(datos[0]['precio_producto'])
-
-})
-
-</script>
-

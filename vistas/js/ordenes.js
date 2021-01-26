@@ -178,25 +178,3 @@ $('.btnRegistrarOrden').on('click', function(){
     })
 
 })
-
-/*=====================================
-=            PROCESAR PAGO            =
-=====================================*/
-$('.btnRealizarPago').on('click', function(){
-
-	fetch('ajax/ordenes.ajax.php', {
-	 method: 'POST',
-	}).then((response) => response.json())
-	.then((responseJson) => {
-
-		console.log("responseJson", responseJson);
-
-	}).catch((error) => {
-
-		console.error(error);
-		
-	});
-
-})
-
-/*=====  End of PROCESAR PAGO  ======*/

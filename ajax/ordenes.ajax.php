@@ -2,8 +2,6 @@
 
 require_once "../controladores/ordenes.controlador.php";
 
-// require_once '../vendor/dnetix/redirection/src/PlacetoPay.php';
-
 class AjaxOrdenes{
 
 	/*=============================================
@@ -27,16 +25,6 @@ class AjaxOrdenes{
 		$respuesta = ControladorOrdenes::ctrOrdenes($datos);
 
 		echo json_encode($respuesta);
-
-		// header("Location: resumen-de-orden");
-
-		// $host = $_SERVER['HTTP_HOST'];
-		// $ruta = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-		// $html = 'resumen-de-orden';
-		// $url = "http://$host$ruta/$html";
-		// header("Location: $url");
-		// echo "El recurso se ha movido hacia <a href=\"$url\">aquí</a>.";
-		// die();
 
 	}
 
