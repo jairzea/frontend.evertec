@@ -29,9 +29,13 @@ $('.btnRealizarPago').on('click', function(){
 
 	var texto = $(datos[0]['descripcion_producto']).text();
 
+	if (texto.length >= 10) {
+      var textCort = texto.substring(0, 10) + '...';
+   }
+
 	const data = new FormData();
 	data.append('precio', datos[0]['precio_producto']);
-	data.append('descripcion', texto);
+	data.append('descripcion', textCort);
 	data.append('id_orden', datos[0]['id_orden']);
 
 	fetch('http://apirest-tienda.evertec/pagar', {
@@ -75,7 +79,7 @@ $('.btnLimpiarCarrito').on('click', function(){
 
 	localStorage.clear();
 	location.reload();
-	
+
 })
 
 
