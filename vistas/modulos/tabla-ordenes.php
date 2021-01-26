@@ -38,7 +38,6 @@
                         <th>Precio</th>
                         <th>Edtado</th>
                         <th>Imagen</th>
-                        <th style="width: 100px">Acciones</th>
                       </tr>
 
                   </thead>

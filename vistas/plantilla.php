@@ -38,7 +38,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
 
-	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/sweetalert.css">
+	<!-- <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/sweetalert.css"> -->
 
 	<!-- summernote -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
@@ -67,7 +67,7 @@
 
 	<script src="<?php echo $url; ?>vistas/js/plugins/bootstrap.min.js"></script>
 
-	<script src="<?php echo $url; ?>vistas/js/plugins/sweetalert.min.js"></script>
+	<script src="<?php echo $url; ?>vistas/js/plugins/sweetalert2.all.js"></script>
 
 	<!-- Summernote -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
@@ -137,6 +137,7 @@ JAVASCRITP PERSONALIZADO
 <script src="<?php echo $url; ?>vistas/js/resumen-de-orden.js"></script>
 <script src="<?php echo $url; ?>vistas/js/tabla-productos.js"></script>
 <script src="<?php echo $url; ?>vistas/js/tabla-ordenes.js"></script>
+<script src="<?php echo $url; ?>vistas/js/productos.js"></script>
 
 </body>
 </html>

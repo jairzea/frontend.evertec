@@ -3,7 +3,7 @@
 =======================================*/
 $(document).ready(function(){
 
-  tabla = $('.tablaPdoductos').DataTable({
+  tablaProductos = $('.tablaPdoductos').DataTable({
       "ajax": {
         'method':'get',
         "url": "http://apirest-tienda.evertec/productos",
@@ -91,19 +91,18 @@ $('.btnGuardarProducto').on('click', function(){
     if (responseJson.status == 200) {
 
       swal({
-      title: "",
-      text: responseJson.detalle,
-      type: "success",
-      showCancelButton: false,
-      confirmButtonColor: "#318f8d",
-      confirmButtonText: "Ok",
-      closeOnConfirm: true
-    },
-    function(isConfirm){
+        title:'Exito',
+        text: responseJson.detalle,
+        type: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Ok!'
+       }).then(function(result){
 
-      tabla.ajax.reload();
-      $('#modalProducto').modal('hide');
-  });
+          tablaProductos.ajax.reload();
+          $('#modalProducto').modal('hide');
+
+       })
 
     }else{
 
@@ -176,19 +175,18 @@ $('.btnEditarProducto').on('click', function(){
     if (responseJson.status == 200) {
 
       swal({
-      title: "",
-      text: responseJson.detalle,
-      type: "success",
-      showCancelButton: false,
-      confirmButtonColor: "#318f8d",
-      confirmButtonText: "Ok",
-      closeOnConfirm: true
-    },
-    function(isConfirm){
+        title:'Exito',
+        text: responseJson.detalle,
+        type: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Ok!'
+       }).then(function(result){
 
-      tabla.ajax.reload();
-      $('#modalProducto').modal('hide');
-  });
+          tablaProductos.ajax.reload();
+          $('#modalProducto').modal('hide');
+
+       })
 
     }else{
 
@@ -205,59 +203,63 @@ $('.btnEditarProducto').on('click', function(){
 
 })
 
-/*========================================
-=            Eliminar Producto            =
-========================================*/
+
+/*=============================================
+ELIMINAR PRODUCTO
+=============================================*/
 $(".tablaPdoductos").on("click", ".btnEliminarProducto", function(){
 
-  let id = $(this).attr('idProducto');
+   let id = $(this).attr('idProducto');
 
-  swal({
-    title: '¿Esta seguro de eliminar este poroducto?',
-    text: '¡Si no lo está, puede cancelar la acción!',
+   swal({
+    title: '¿Está seguro de borrar el producto?',
+    text: "¡Si no lo está puede cancelar la acción!",
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     cancelButtonText: 'Cancelar',
     confirmButtonText: 'Si, borrar producto!'
-  },function(isConfirm){
+   }).then(function(result){
 
-    fetch('http://apirest-tienda.evertec/borrar_producto/'+id, {
-     method: 'DELETE',
-    }).then((response) => response.json())
-    .then((responseJson) => {
+    if(result.value){
 
-      if (responseJson.status == 200) {
+      fetch('http://apirest-tienda.evertec/borrar_producto/'+id, {
+      method: 'DELETE',
+      }).then((response) => response.json())
+      .then((responseJson) => {
 
-        swal({
-        title: "",
-        text: responseJson.detalle,
-        type: "success",
-        showCancelButton: false,
-        confirmButtonColor: "#318f8d",
-        confirmButtonText: "Ok",
-        closeOnConfirm: true
-      },
-      function(isConfirm){
+        if (responseJson.status == 200) {
 
-        tabla.ajax.reload();
-        $('#modalProducto').modal('hide');
-    });
+          swal({
+          title: 'Exito',
+          text: "¡El producto de borró correctamente!",
+          type: 'success',
+          showCancelButton: false,
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Ok!'
+         }).then(function(result){
 
-      }else{
+            tablaProductos.ajax.reload();
 
-        swal({
+         })
+
+        
+        }else{
+
+          swal({
             type:"error",
             title: responseJson.detalle,
             showConfirmButton: true,
             confirmButtonText: "Cerrar"
-          
-        })
-      }
+        
+          })
+        }
 
-    })
+      })
 
-  })
-  
+    }
+
+   })
+
 })

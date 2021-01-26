@@ -142,7 +142,7 @@ MODAL AGREGAR EMPRESA
 
             </div>
 
-            <!-- ENTRADA PARA EL REPRESENTANTE -->
+            <!-- ENTRADA PARA EL LINK DE LA IMAGEN -->
 
             <div class="form-group row">
 
@@ -156,6 +156,7 @@ MODAL AGREGAR EMPRESA
                     <input type="hidden" name="idProducto" id="idProducto" required>
 
                 </div>
+                <p class="help-block">Formato: jpg o png | Dimesiones 250 x 250.</p>
 
               </div>
 
