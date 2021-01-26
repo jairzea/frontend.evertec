@@ -3,13 +3,19 @@
 =======================================*/
 $(document).ready(function(){
 
+  email = localStorage.getItem("emaiOrdenes");
+  
+  $('.nombreOrdenesUsr').append(email);
+
   tabla = $('.tablaOrdenesUsuarios').DataTable({
       "ajax": {
-        'method':'get',
-        "url": "http://apirest-tienda.evertec/ver_ordenes_productos",
+        'method':'post',
+        "url": "http://apirest-tienda.evertec/ver_ordenes_usuario",
         "dataSrc": "",
         "dataType": 'json',
-         "data": d => {},
+         "data": d => { 
+            d.email = email;
+        },
       },
       "columns": [
         { "data": "id_orden" },
@@ -29,7 +35,7 @@ $(document).ready(function(){
         { "data": "estado" },
         { render: (data, type, row) => {
           return `<figure>
-                        <img style="width:50%" src="${row.img}" alt="${row.name}">
+                        <img src="${row.imagen_producto}" style="width:50%"  alt="${row.name}">
                   </figure>`;
                   }
         },

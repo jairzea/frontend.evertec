@@ -96,7 +96,7 @@ TABLA RESUMEN DE ORDEN
 
 						<center>
 							 
-							 <button class="btn btn-default backColor">
+							 <button class="btn btn-default backColor btnLimpiarCarrito">
 							 	
 							 	<i class="fa fa-times"></i>
 

@@ -5,7 +5,6 @@
 $(document).ready(function(){
 
 	let datos = JSON.parse(localStorage.getItem("listaProducto"));
-	console.log("datos", datos);
 
 	$('#nombreResumen').append(datos[0]['nombre']);
 
@@ -15,7 +14,6 @@ $(document).ready(function(){
 	$('.tituloResumenOrden').append(datos[0]['nombre_producto'])
 	$('.descripcionResumenOrden').append(datos[0]['descripcion_producto'])
 	$('.precioResumen').append(datos[0]['precio_producto'])
-	// $(".imgResumenOrden").attr("src",datos[0]['imagen_producto'])
 
 	$('.imgResumenOrden').append(`<img src="${datos[0]['imagen']}" alt="${datos[0]['nombre_producto']}" class="img-thumbnail">`)
 
@@ -30,11 +28,10 @@ $('.btnRealizarPago').on('click', function(){
 	let datos = JSON.parse(localStorage.getItem("listaProducto"));
 
 	var texto = $(datos[0]['descripcion_producto']).text();
-	var precio = parseFloat(datos[0]['precio_producto']);
 
 	const data = new FormData();
-	data.append('precio', '500000');
-	data.append('descripcion', 'texto');
+	data.append('precio', datos[0]['precio_producto']);
+	data.append('descripcion', texto);
 	data.append('id_orden', datos[0]['id_orden']);
 
 	fetch('http://apirest-tienda.evertec/pagar', {
@@ -46,8 +43,17 @@ $('.btnRealizarPago').on('click', function(){
 
 		if (responseJson['requestId']) {
 
-			// window.open(responseJson['processUrl'], '_blank');
+			window.open(responseJson['processUrl'], '_blank');
 
+		}else{
+
+			swal({
+	          type:"error",
+	          title: responseJson,
+	          showConfirmButton: true,
+	          confirmButtonText: "Cerrar"
+	        
+	      	})
 		}
 
 		
@@ -61,6 +67,19 @@ $('.btnRealizarPago').on('click', function(){
 })
 
 /*=====  End of PROCESAR PAGO  ======*/
+
+/*=======================================
+=            Limpiar carrito            =
+=======================================*/
+$('.btnLimpiarCarrito').on('click', function(){
+
+	localStorage.clear();
+	location.reload();
+	
+})
+
+
+
 
 
 

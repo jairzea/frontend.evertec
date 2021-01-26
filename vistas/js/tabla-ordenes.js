@@ -29,7 +29,7 @@ $(document).ready(function(){
         { "data": "estado" },
         { render: (data, type, row) => {
           return `<figure>
-                        <img style="width:50%" src="${row.img}" alt="${row.name}">
+                        <img style="width:50%" src="${row.imagen_producto}" alt="${row.name}">
                   </figure>`;
                   }
         }

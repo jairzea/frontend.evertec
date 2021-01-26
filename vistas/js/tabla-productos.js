@@ -75,17 +75,15 @@ $(document).ready(function(){
 VALIDAR MONTO
 =============================================*/
 
-$('#regEmail').change(function(){
+$('#precioProducto').change(function(){
 
-  $('.alertMail').empty();
+  let monto = Number($(this).val());
 
-  let email = $(this).val();
+  $('.alertMonto').empty();
 
-  var expresion = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+  if (monto >= 500001) {
 
-  if (!expresion.test(email)) {
-
-    $('#regEmail').parent().before('<div class="alertMail"><div class="alert alert-danger"><strong>ERROR:</strong> Escriba correctamente el correo electronico</div></div>');
+    $('#precioProducto').parent().before('<div class="alertMonto"><div class="alert alert-danger"><strong>ERROR:</strong> El monto no debe ser mayor a $500000</div></div>');
 
     return false;
   }
@@ -137,9 +135,7 @@ $('.btnGuardarProducto').on('click', function(){
           showConfirmButton: true,
           confirmButtonText: "Cerrar"
         
-      }).then(function(result){
-
-      });
+      })
     }
 
   }).catch((error) => {

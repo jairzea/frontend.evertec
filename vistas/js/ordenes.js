@@ -134,6 +134,8 @@ $('.btnRegistrarOrden').on('click', function(){
 
 								var listaOrden = [];
 
+								localStorage.clear()
+
 								/*===========================================================
 					        	=            Agregar informacion al localstorage            =
 					        	===========================================================*/
@@ -168,12 +170,56 @@ $('.btnRegistrarOrden').on('click', function(){
 		            showConfirmButton: true,
 		            confirmButtonText: "Cerrar"
 		          
-		        }).then(function(result){
-
-		        });
+		        })
         	}
         }
 
     })
 
 })
+
+/*=========================================
+=   CONSULTAR ORDENES DE USUARIO          =
+=========================================*/
+$('.btnConsultarOrden').on('click', function(){
+
+	var email = $('#emaiConsulta').val();
+
+	const data = new FormData();
+	data.append('email', email);
+
+	fetch('http://apirest-tienda.evertec/ver_ordenes_usuario', {
+	method: 'POST',
+	body: data
+	}).then((response) => response.json())
+	.then((responseJson) => {
+
+		if (responseJson.status != '400') {
+
+			localStorage.clear();
+
+			localStorage.setItem("emaiOrdenes", email)
+
+			window.open('tabla-ordenes-usuarios');
+
+		}else{
+
+			swal({
+	          type:"error",
+	          title: responseJson.detalles,
+	          showConfirmButton: true,
+	          confirmButtonText: "Cerrar"
+	        
+	      	})
+		}
+
+		
+
+	}).catch((error) => {
+
+		console.error(error)
+		
+	});
+})
+
+

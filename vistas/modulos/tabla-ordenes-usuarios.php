@@ -16,7 +16,7 @@
 
               <div class="card-header">
 
-                <h3>Ordenes</h3>
+                <h3 class="nombreOrdenesUsr">Ordenes realizadas por </h3>
 
               </div>
 
@@ -38,6 +38,7 @@
                         <th>Precio</th>
                         <th>Edtado</th>
                         <th>Imagen</th>
+                        <th>Acciones</th>
                       </tr>
 
                   </thead>

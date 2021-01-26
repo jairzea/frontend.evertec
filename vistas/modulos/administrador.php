@@ -11,7 +11,7 @@ BREADCRUMB PERFIL
       <ul class="breadcrumb fondoBreadcrumb text-uppercase">
         
         <li><a href="<?php echo $url;?>tabla-productos">Productos</a></li>
-        <li class="active"><a href="<?php echo $url;?>tabla-ordenes">Ordenes</a></li>
+        <li class="active"><a href="<?php echo $url;?>tabla-ordenes">Ordenes de la tienda</a></li>
 
       </ul>
 
