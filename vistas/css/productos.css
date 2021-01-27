@@ -102,8 +102,13 @@ VITRINA PRODUCTOS CUADRICULA
 }
 
 .productos ul li div.enlaces button i{
+	color: #fff;
+	font-size: 18px;
+}
+
+.productos ul li div.enlaces button.deseos i{
 	color: #999;
-	font-size: 12px;
+	font-size: 18px;
 }
 
 /*===========================

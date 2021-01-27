@@ -79,7 +79,7 @@ $.ajax({
 								
 							</button>
 
-							<button type="button" class="btn btn-default btn-xs" onclick="llenarOrden(this)"  idProducto="${respuesta[i]['id']}" imagen="${respuesta[i]['img']}" titulo="${respuesta[i]['name']}" precio="${precio}" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
+							<button type="button" class="btn btn-success btn-xs" onclick="llenarOrden(this)"  idProducto="${respuesta[i]['id']}" imagen="${respuesta[i]['img']}" titulo="${respuesta[i]['name']}" precio="${precio}" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
 
 								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								
@@ -87,7 +87,7 @@ $.ajax({
 
 							<a href="">
 								
-								<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+								<button type="button" class="btn btn-default btn-xs deseos" data-toggle="tooltip" title="Ver producto">
 
 									<i class="fa fa-eye" aria-hidden="true"></i>
 								
@@ -162,7 +162,7 @@ $.ajax({
 							
 						</button>
 
-						<button type="button" class="btn btn-default btn-xs" onclick="llenarOrden(this)" idProducto="${respuesta[i]['id']}" imagen="${respuesta[i]['img']}" titulo="${respuesta[i]['name']}" precio="${precio}" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
+						<button type="button" class="btn btn-success btn-xs" style="color=white" onclick="llenarOrden(this)" idProducto="${respuesta[i]['id']}" imagen="${respuesta[i]['img']}" titulo="${respuesta[i]['name']}" precio="${precio}" data-toggle="tooltip" title="Agregar a carrito y llenar orden">
 
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 							

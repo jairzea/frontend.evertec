@@ -101,7 +101,7 @@ $('.btnGuardarProducto').on('click', function(){
   data.append('precio', $('#precioProducto').val());
   data.append('imagen', $('#imagenProducto').val());
 
-  fetch('http://apirest-tienda.evertec/registro_productos', {
+  fetch(rutaBackend+'/registro_productos', {
    method: 'POST',
    body: data
   }).then((response) => response.json())
@@ -187,7 +187,7 @@ $('.btnEditarProducto').on('click', function(){
   data.append('imagen', $('#imagenProducto').val());
   data.append('id', $('#idProducto').val());
 
-  fetch('http://apirest-tienda.evertec/editar_producto', {
+  fetch(rutaBackend+'/editar_producto', {
    method: 'POST',
    body: data
   }).then((response) => response.json())
@@ -245,7 +245,7 @@ $(".tablaPdoductos").on("click", ".btnEliminarProducto", function(){
 
     if(result.value){
 
-      fetch('http://apirest-tienda.evertec/borrar_producto/'+id, {
+      fetch(rutaBackend+'/borrar_producto/'+id, {
       method: 'DELETE',
       }).then((response) => response.json())
       .then((responseJson) => {
