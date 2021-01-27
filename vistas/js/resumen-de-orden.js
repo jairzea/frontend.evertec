@@ -39,9 +39,9 @@ $('.btnRealizarPago').on('click', function(){
 	data.append('precio', datos[0]['precio_producto']);
 	data.append('descripcion', textCort);
 	data.append('id_orden', datos[0]['id_orden']);
-	data.append('urlRetorno', 'http://localhost/frontend.evertec/resumen-de-orden');
+	data.append('urlRetorno', rutaBackend+'/resumen-de-orden');
 
-	fetch('http://apirest-tienda.evertec/pagar', {
+	fetch(rutaBackend+'/pagar', {
 	 method: 'POST',
 	 body: data
 	}).then((response) => response.json())

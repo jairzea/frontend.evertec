@@ -1,10 +1,9 @@
 /*============================================
 =            VITRINA DE PRODUCTOS            =
 ============================================*/
-
 $.ajax({
 
-    url: 'http://apirest-tienda.evertec/productos',
+    url: rutaBackend+'/productos',
     method: 'GET',
     dataType: 'json',
     success: function(respuesta){

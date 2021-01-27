@@ -23,6 +23,7 @@
 		=============================================*/
 		
 		$url = Ruta::ctrRuta();
+		$urlBacken = Ruta::ctrRutaBacken();
 
 	?>
 
@@ -127,6 +128,7 @@ if (isset($_GET["ruta"])) {
 ?>
 
 <input type="hidden" value="<?php echo $url; ?>" id="rutaOculta">
+<input type="hidden" value="<?php echo $urlBacken; ?>" id="rutaBackendOculta">
 <!--===================================
 JAVASCRITP PERSONALIZADO
 ====================================-->

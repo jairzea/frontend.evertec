@@ -68,6 +68,8 @@ $('.btnRegistrarOrden').on('click', function(){
 	let email = $('#regEmail').val();
 	let telefono = $('#regTelefono').val();
 
+
+
 	/*===Validar Email===*/
 	if (email == "") {
 
@@ -95,7 +97,7 @@ $('.btnRegistrarOrden').on('click', function(){
 
 	$.ajax({
 
-        url: 'http://apirest-tienda.evertec/registro_ordenes',
+        url: rutaBackend+'/registro_ordenes',
         method: 'POST',
         dataType: 'json',
         data:{
@@ -125,7 +127,7 @@ $('.btnRegistrarOrden').on('click', function(){
 
 							headers.append('Authorization', 'Basic ' + btoa(username + ":" + password));
 							
-							fetch('http://apirest-tienda.evertec/orden_activa', {
+							fetch(rutaBackend+'/orden_activa', {
 							 method: 'GET',
 							 headers: headers
 							}).then((response) => response.json())
@@ -184,12 +186,14 @@ $('.btnRegistrarOrden').on('click', function(){
 =========================================*/
 $('.btnConsultarOrden').on('click', function(){
 
+
+
 	var email = $('#emaiConsulta').val();
 
 	const data = new FormData();
 	data.append('email', email);
 
-	fetch('http://apirest-tienda.evertec/ver_ordenes_usuario', {
+	fetch(rutaBackend+'/ver_ordenes_usuario', {
 	method: 'POST',
 	body: data
 	}).then((response) => response.json())

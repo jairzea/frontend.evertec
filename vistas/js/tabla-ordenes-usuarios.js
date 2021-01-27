@@ -10,7 +10,7 @@ $(document).ready(function(){
   tabla = $('.tablaOrdenesUsuarios').DataTable({
       "ajax": {
         'method':'post',
-        "url": "http://apirest-tienda.evertec/ver_ordenes_usuario",
+        "url": rutaBackend+"/ver_ordenes_usuario",
         "dataSrc": "",
         "dataType": 'json',
          "data": d => { 
@@ -78,7 +78,7 @@ $('.tablaOrdenesUsuarios').on('click', '.btnReintentarPago', function(){
 
   headers.append('Authorization', 'Basic ' + btoa(username + ":" + password));
   
-  fetch('http://apirest-tienda.evertec/orden_activa', {
+  fetch(rutaBackend+'/orden_activa', {
    method: 'GET',
    headers: headers
   }).then((response) => response.json())

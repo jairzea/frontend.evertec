@@ -38,6 +38,7 @@ $(".tablas").DataTable({
 });
 
 var rutaOculta = $("#rutaOculta").val();
+var rutaBackend = $("#rutaBackendOculta").val();
 
 /*=============================================
 Plugin summernote para el etxarea

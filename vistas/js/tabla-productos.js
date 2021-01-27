@@ -6,7 +6,7 @@ $(document).ready(function(){
   tablaProductos = $('.tablaPdoductos').DataTable({
       "ajax": {
         'method':'get',
-        "url": "http://apirest-tienda.evertec/productos",
+        "url": rutaBackend+"/productos",
         "dataSrc": "",
         "dataType": 'json',
          "data": d => {},
