@@ -6,17 +6,19 @@ $(document).ready(function(){
 
 	let datos = JSON.parse(localStorage.getItem("listaProducto"));
 
-	$('#nombreResumen').append(datos[0]['nombre']);
+	if (datos) {
 
-	$('#correoResumen').append(datos[0]['email'])
-	$('#telefonoResumen').append(datos[0]['telefono'])
+		$('#nombreResumen').append(datos[0]['nombre']);
 
-	$('.tituloResumenOrden').append(datos[0]['nombre_producto'])
-	$('.descripcionResumenOrden').append(datos[0]['descripcion_producto'])
-	$('.precioResumen').append(datos[0]['precio_producto'])
+		$('#correoResumen').append(datos[0]['email'])
+		$('#telefonoResumen').append(datos[0]['telefono'])
 
-	$('.imgResumenOrden').append(`<img src="${datos[0]['imagen']}" alt="${datos[0]['nombre_producto']}" class="img-thumbnail">`)
+		$('.tituloResumenOrden').append(datos[0]['nombre_producto'])
+		$('.descripcionResumenOrden').append(datos[0]['descripcion_producto'])
+		$('.precioResumen').append(datos[0]['precio_producto'])
 
+		$('.imgResumenOrden').append(`<img src="${datos[0]['imagen']}" alt="${datos[0]['nombre_producto']}" class="img-thumbnail">`)
+	}
 
 })
 
@@ -37,6 +39,7 @@ $('.btnRealizarPago').on('click', function(){
 	data.append('precio', datos[0]['precio_producto']);
 	data.append('descripcion', textCort);
 	data.append('id_orden', datos[0]['id_orden']);
+	data.append('urlRetorno', 'http://localhost/frontend.evertec/resumen-de-orden');
 
 	fetch('http://apirest-tienda.evertec/pagar', {
 	 method: 'POST',

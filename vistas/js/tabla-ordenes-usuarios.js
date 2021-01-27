@@ -23,13 +23,7 @@ $(document).ready(function(){
         { "data": "telefono" },
         { "data": "email" },
         { "data": "referencia_orden" },
-        { "data": "created_at" },
-        { render: (data, type, row) => {
-          return `<div>
-                        <a href="${row.url_pago}">Url de pago</a>
-                  </div>`;
-                  }
-        },
+        { "data": "url_pago" },
         { "data": "nombre_producto" },
         { "data": "precio_producto" },
         { "data": "estado" },
@@ -39,15 +33,8 @@ $(document).ready(function(){
                   </figure>`;
                   }
         },
-        { render: (data, type, row) => {
-          return `<div class="btn-group">
-                        <button class="btn btn-danger btn-sm btnEliminarProducto" 
-                         idProducto='${row.id}'>
-                          <i class="fa fa-eye"></i>
-                        </button>
-                  </div>`;
-                  }
-        },
+        { "data": "created_at" },
+        { "data": "boton" },
       ],
       destroy: true,
       responsive: true,
@@ -80,4 +67,49 @@ $(document).ready(function(){
       }
   });
 
+})
+
+$('.tablaOrdenesUsuarios').on('click', '.btnReintentarPago', function(){
+
+  let username = $(this).attr('id_cliente');
+  let password = $(this).attr('llave_secreta');
+
+  let headers = new Headers();
+
+  headers.append('Authorization', 'Basic ' + btoa(username + ":" + password));
+  
+  fetch('http://apirest-tienda.evertec/orden_activa', {
+   method: 'GET',
+   headers: headers
+  }).then((response) => response.json())
+  .then((responseJson) => {
+
+    let datos = responseJson.orden;
+
+    var listaOrden = [];
+
+    localStorage.clear()
+
+    /*===========================================================
+    =            Agregar informacion al localstorage            =
+    ===========================================================*/
+    listaOrden.push({'nombre' : datos[0]['nombre'],
+             'email' : datos[0]['email'],
+             'nombre_producto' : datos[0]['nombre_producto'],
+             'descripcion_producto': datos[0]['descripcion_producto'],
+             'id_orden': datos[0]['id_orden'],
+             'telefono': datos[0]['telefono'],
+             'imagen': datos[0]['imagen_producto'],
+             'precio_producto': datos[0]['precio_producto']})
+
+    localStorage.setItem("listaProducto", JSON.stringify(listaOrden))
+
+    window.location = rutaOculta+"resumen-de-orden";
+
+
+  }).catch((error) => {
+
+    console.error(error);
+    
+  });
 })

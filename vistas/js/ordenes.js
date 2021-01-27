@@ -124,6 +124,7 @@ $('.btnRegistrarOrden').on('click', function(){
 							let headers = new Headers();
 
 							headers.append('Authorization', 'Basic ' + btoa(username + ":" + password));
+							
 							fetch('http://apirest-tienda.evertec/orden_activa', {
 							 method: 'GET',
 							 headers: headers
