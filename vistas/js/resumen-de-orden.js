@@ -39,7 +39,7 @@ $('.btnRealizarPago').on('click', function(){
 	data.append('precio', datos[0]['precio_producto']);
 	data.append('descripcion', textCort);
 	data.append('id_orden', datos[0]['id_orden']);
-	data.append('urlRetorno', rutaBackend+'/resumen-de-orden');
+	data.append('urlRetorno', rutaBackend+'/respuestaPago');
 
 	fetch(rutaBackend+'/pagar', {
 	 method: 'POST',

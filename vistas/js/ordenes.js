@@ -119,7 +119,9 @@ $('.btnRegistrarOrden').on('click', function(){
 			        type: 'success',
 			        showCancelButton: false,
 			        confirmButtonColor: '#3085d6',
-			        confirmButtonText: "¡Ir al resumen de orden!"
+			        confirmButtonText: "¡Ir al resumen de orden!",
+			        allowOutsideClick: false,
+              		allowEscapeKey: false
 			       }).then(function(result){
 						if (result.value) {
 
