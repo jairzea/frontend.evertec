@@ -31,6 +31,8 @@ $('.btnRealizarPago').on('click', function(){
 
 	let datos = JSON.parse(localStorage.getItem("listaProducto"));
 
+	let precio = Number(datos[0]['precio_producto'] - datos[0]['precio_producto'] * 0.9)
+
 	var texto = $(datos[0]['descripcion_producto']).text();
 
 	if (texto.length >= 10) {
@@ -38,7 +40,7 @@ $('.btnRealizarPago').on('click', function(){
    }
 
 	const data = new FormData();
-	data.append('precio', datos[0]['precio_producto']);
+	data.append('precio', precio);
 	data.append('descripcion', textCort);
 	data.append('id_orden', datos[0]['id_orden']);
 	data.append('urlRetorno', rutaBackend+'/respuestaPago');
