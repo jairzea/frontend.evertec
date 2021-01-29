@@ -8,6 +8,8 @@ $(document).ready(function(){
 
 	if (datos) {
 
+		let precio = Number(datos[0]['precio_producto'] - datos[0]['precio_producto'] * 0.9)
+
 		$('#nombreResumen').append(datos[0]['nombre']);
 
 		$('#correoResumen').append(datos[0]['email'])
@@ -15,7 +17,7 @@ $(document).ready(function(){
 
 		$('.tituloResumenOrden').append(datos[0]['nombre_producto'])
 		$('.descripcionResumenOrden').append(datos[0]['descripcion_producto'])
-		$('.precioResumen').append(datos[0]['precio_producto'])
+		$('.precioResumen').append(precio)
 
 		$('.imgResumenOrden').append(`<img src="${datos[0]['imagen']}" alt="${datos[0]['nombre_producto']}" class="img-thumbnail">`)
 	}
