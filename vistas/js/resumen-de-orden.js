@@ -8,8 +8,6 @@ $(document).ready(function(){
 
 	if (datos) {
 
-		let precio = Number(datos[0]['precio_producto'] - datos[0]['precio_producto'] * 0.9)
-
 		$('#nombreResumen').append(datos[0]['nombre']);
 
 		$('#correoResumen').append(datos[0]['email'])
@@ -17,7 +15,7 @@ $(document).ready(function(){
 
 		$('.tituloResumenOrden').append(datos[0]['nombre_producto'])
 		$('.descripcionResumenOrden').append(datos[0]['descripcion_producto'])
-		$('.precioResumen').append(precio)
+		$('.precioResumen').append(datos[0]['precio_producto'])
 
 		$('.imgResumenOrden').append(`<img src="${datos[0]['imagen']}" alt="${datos[0]['nombre_producto']}" class="img-thumbnail">`)
 	}
@@ -31,8 +29,6 @@ $('.btnRealizarPago').on('click', function(){
 
 	let datos = JSON.parse(localStorage.getItem("listaProducto"));
 
-	let precio = Number(datos[0]['precio_producto'] - datos[0]['precio_producto'] * 0.9)
-
 	var texto = $(datos[0]['descripcion_producto']).text();
 
 	if (texto.length >= 10) {
@@ -40,7 +36,7 @@ $('.btnRealizarPago').on('click', function(){
    }
 
 	const data = new FormData();
-	data.append('precio', precio);
+	data.append('precio', datos[0]['precio_producto']);
 	data.append('descripcion', textCort);
 	data.append('id_orden', datos[0]['id_orden']);
 	data.append('urlRetorno', rutaBackend+'/respuestaPago');

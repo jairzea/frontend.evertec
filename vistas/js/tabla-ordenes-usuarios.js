@@ -93,6 +93,9 @@ $('.tablaOrdenesUsuarios').on('click', '.btnReintentarPago', function(){
     /*===========================================================
     =            Agregar informacion al localstorage            =
     ===========================================================*/
+
+    let precio = Number(datos[0]['precio_producto'] - datos[0]['precio_producto'] * 0.9)
+
     listaOrden.push({'nombre' : datos[0]['nombre'],
              'email' : datos[0]['email'],
              'nombre_producto' : datos[0]['nombre_producto'],
@@ -100,7 +103,7 @@ $('.tablaOrdenesUsuarios').on('click', '.btnReintentarPago', function(){
              'id_orden': datos[0]['id_orden'],
              'telefono': datos[0]['telefono'],
              'imagen': datos[0]['imagen_producto'],
-             'precio_producto': datos[0]['precio_producto']})
+             'precio_producto': precio})
 
     localStorage.setItem("listaProducto", JSON.stringify(listaOrden))
 
